@@ -25,4 +25,12 @@ public class CategoriaService {
 		obj.setId(null);
 		return repository.save(obj); 
 	}
+
+	public Categoria upDate(Integer id, Categoria obj) {
+		Categoria objN = findById(id);
+		objN.setNome(obj.getNome());
+		objN.setDescricao(obj.getDescricao());
+		
+		return repository.save(objN);
+	}
 }
